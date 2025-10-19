@@ -81,6 +81,53 @@ cargo run
 cargo new plugin --lib
 ```
 
+### Cargo.toml
+
+Your `Cargo.toml` file should look like this:
+
+```toml
+[package]
+name = "my_plugin"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+```
+
+Your src/lib.rs file should define a run function with #[no_mangle]:
+```rust
+// src/lib.rs
+#[no_mangle]
+pub extern "C" fn run() { 
+    println!("Hello from plugin!");
+}
+```
+
+## Compile plugin
+
+### Wasm
+```rust
+rustup target add wasm32-unknown-unknown
+cargo build --release --target wasm32-unknown-unknown
+cp target/wasm32-unknown-unknown/release/plugin.wasm ../plugins/
+```
+
+### Wasm with Wasi
+```rust
+rustup target add wasm32-wasip1
+cargo build --release --target wasm32-wasip1
+cp target/wasm32-wasip1/release/plugin.wasm ../plugins/
+```
+
+### Wasm with Target Legacy Emscripten
+```rust
+# Installa Emscripten (richiede tool esterno)
+rustup target add wasm32-unknown-emscripten
+cargo build --release --target wasm32-unknown-emscripten
+cp target/wasm32-unknown-emscripten/release/plugin.wasm ../plugins/
+```
+
 # Install signature tool
 ```rust
 cargo install wasmsign2-cli

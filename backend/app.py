@@ -11,7 +11,7 @@ def index():
 @app.route('/api/data')
 def api_data():
     return jsonify({
-        "message": "Ciao dal backend Flask!",
+        "message": "Hello word",
         "status": "success"
     })
 
