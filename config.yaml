@@ -14,7 +14,7 @@ routes:
     upstream: "http://127.0.0.1:5000"
     cache: true
     plugins:
-      - name: "hello"
+      - name: "plugin"
         options: {}
 
   - path: "/api"

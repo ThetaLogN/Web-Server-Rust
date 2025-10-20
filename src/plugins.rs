@@ -24,7 +24,6 @@ pub struct Plugin {
 
 impl Plugin {
 
- 
     pub async fn run(&self, req: &Request<Body>) -> anyhow::Result<()> {
         let engine = Engine::default();
     
@@ -134,8 +133,6 @@ pub fn load_plugins(engine: &Engine, config: &Config) -> anyhow::Result<HashMap<
         }
 
         if verify_with_trusted_keys(plugin_path.to_str().unwrap(), "./keys/trusted_keys.json").is_ok() {
-            println!("Plugin verified and trusted: {:?}", plugin_path);
-
             let module = Module::from_file(engine, &plugin_path)?;
             let plugin = Plugin {
                 name: plugin_name.clone(),

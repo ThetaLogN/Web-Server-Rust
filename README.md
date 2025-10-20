@@ -18,6 +18,11 @@
 <img src="./images/system.jpg" alt="logo" width="800"/></td>
 
 
+# Application in IOT System
+
+<img src="./images/wsrIOT.png" alt="logo" width="800"/></td>
+
+
 # Architecture
 
 ![schema](./images/schema1.png)
@@ -122,7 +127,7 @@ cp target/wasm32-wasip1/release/plugin.wasm ../plugins/
 
 ### Wasm with Target Legacy Emscripten
 ```rust
-# Installa Emscripten (richiede tool esterno)
+# Installa Emscripten
 rustup target add wasm32-unknown-emscripten
 cargo build --release --target wasm32-unknown-emscripten
 cp target/wasm32-unknown-emscripten/release/plugin.wasm ../plugins/
