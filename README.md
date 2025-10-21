@@ -20,7 +20,7 @@
 
 # Application in IOT System
 
-<img src="./images/wsr_IOT.png" alt="logo" width="800"/></td>
+<img src="./images/wsr_IOT1.png" alt="logo" width="800"/></td>
 
 
 # Architecture
